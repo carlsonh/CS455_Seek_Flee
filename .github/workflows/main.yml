@@ -80,6 +80,11 @@ jobs:
         with:
           name: Build
           path: build
+      - uses: JasonEtco/upload-to-release@master
+        with:
+          args: Build.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   activateAndThenReturnLicense:
     name: returnLicense 🎈
@@ -99,3 +104,4 @@ jobs:
       # Return License
       - name: Return license
         uses: webbertakken/unity-return-license@v0.1
+
