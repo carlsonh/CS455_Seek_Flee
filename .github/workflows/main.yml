@@ -61,6 +61,7 @@ jobs:
           name: Build
           path: build
       - run: ls
+      - run: pwd
       - run: zip -r Build.zip /home/runner/work/CS455_Seek_Flee/CS455_Seek_Flee/build
       - uses: JasonEtco/upload-to-release@master
         with:
