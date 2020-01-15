@@ -82,7 +82,7 @@ jobs:
           path: build
       - uses: JasonEtco/upload-to-release@master
         with:
-          args: Build.zip
+          args: Build.zip application/zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
