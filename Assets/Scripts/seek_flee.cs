@@ -9,14 +9,16 @@ public class seek_flee : MonoBehaviour
     public float watch_radius = 7f;
     public float arrive_radius = 2f;
     public float approach_speed = 5f;
+    public float rotate_multiplier = 1.5f;
     public Rigidbody rb;
     // Update is called once per frame
     void Update()
     {
         if((Vector3.Distance(transform.position, player_Transform.position) <= watch_radius))
         {//Player is inside watch radius
+
         	//Look at the player ///This doesn't fully work on flee bots for some reason
-        	transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation( player_Transform.position - transform.position ), Time.deltaTime );
+        	transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation( player_Transform.position - transform.position ), Time.deltaTime * rotate_multiplier );
 
 
         	//Calculate the vector directly away from the player
